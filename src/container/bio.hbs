@@ -1,0 +1,68 @@
+<div>
+    {{> title data=name big=true}}
+    <h3>({{nationality}})</h3>
+    <div>
+        <em>{{birthdate}}</em> - <b>{{birthplace}}</b>
+    </div>
+    <br>
+    <div>
+        <em>{{deathdate}}</em> - <b>{{deathplace}}</b>
+    </div>
+    <hr>
+    <div>
+        <h4>{{occupation}}</h4>
+        <ul>
+            {{#each known_for}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    <hr>
+    {{> title data="Education:" big=true}}
+
+    {{#each education}}
+    <p>{{degree}} /{{field}}/</p>
+    <div>
+        {{institution}}({{year}})
+    </div>
+    {{/each}}
+
+    {{> title data="Publications:"}}
+    <ul>
+        {{#each notable_publications}}
+        <li>{{title}}({{publisher}}/{{year}})</li>
+        {{/each}}
+    </ul>
+
+    {{> title data="Partners:"}}
+    <ul>
+        {{#each partners}}
+        <li>{{name}} - {{relationship}}({{years}})</li>
+        {{/each}}
+    </ul>
+
+    {{> title data="Awards:"}}
+    {{> li2 data=awards}}
+
+    {{> title data="Influences:"}}
+    {{> li1 data=influences}}
+
+    {{> title data="Influenced:"}}
+    {{> li1 data=influenced}}
+
+    {{> title data="Quotes:"}}
+    {{> li1 data=quotes}}
+
+    {{> title data="Discoveries:"}}
+    {{> li2 data=major_discoveries}}
+
+    {{> title data="Contributions:"}}
+    <ul>
+        {{#with contributions}}
+        <li>{{title}}({{year}})</li>
+        <em>{{description}}</em>
+        <p>{{field}}</p>
+        {{/with}}
+
+    </ul>
+</div>
