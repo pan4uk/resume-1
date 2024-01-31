@@ -1,0 +1,80 @@
+<div>
+    <section>
+        <h1>{{name}} <span class="badge bg-success">TOP</span></h1>
+
+        {{#with history}}
+        <div>
+            <h2>{{founder}}<data> ({{year}})</data></h2>
+
+        </div>
+        {{history}}
+        {{/with}}
+    </section>
+    <hr>
+    <section>
+        {{> title data="Types:" big=true}}
+
+        {{#each types}}
+        <span class="badge text-bg-primary">{{this}}</span>
+        {{/each}}
+    </section>
+    <hr>
+    <sextion>
+        {{#with syntax}}
+        <ul>
+            {{> title data="Variables:"}}
+            {{> list-js data=variables}}
+        </ul>
+
+        <ul>
+            {{> title data="Functions:"}}
+            {{> list-js data=functions}}
+        </ul>
+
+        <ul>
+            {{> title data="Conditionals:"}}
+            {{> list-js data=conditionals}}
+        </ul>
+
+        <ul>
+            {{> title data="Loops:"}}
+            {{> list-js data=loops}}
+        </ul>
+
+        <ul>
+            {{> title data="Classes:"}}
+            {{> list-js data=classes}}
+        </ul>
+        {{/with}}
+    </sextion>
+    <hr>
+    <section>
+        {{> title data="Features:"}}
+        {{#each features}}
+        <ul>
+            <li><span class="badge rounded-pill text-bg-success">{{this}}</span></li>
+        </ul>
+        {{/each}}
+    </section>
+    <hr>
+    <section>
+        {{> title data="Libraries:"}}
+        {{#each libraries}}
+        <span class="badge rounded-pill text-bg-warning">{{this}}</span>
+        {{/each}}
+    </section>
+    <hr>
+    <section>
+        {{> title data="Tools:"}}
+        {{#each tools}}
+        <span class="badge rounded-pill text-bg-danger">{{this}}</span>
+        {{/each}}
+    </section>
+    <hr>
+    <section>
+        {{> title data="Community:"}}
+        {{#each community}}
+        <button type="button" class="btn btn-outline-info">{{name}}/{{type}}</button>
+        {{/each}}
+    </section>
+</div>
