@@ -1,0 +1,356 @@
+<main>
+    <section>
+
+        <div class="card" style="width: 25rem;">
+            <div class="card-header">
+                <strong>
+                    <h1>{{make}} </h1>
+                </strong>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h4>{{model}}</h4>
+                </li>
+                <li class="list-group-item">
+                    <h4>{{year}}</h4>
+                </li>
+                <li class="list-group-item">
+                    <h5>{{color}}</h5>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <br>
+    <section>
+        <h2>Features</h2>
+    </section>
+    <section>
+        {{#with features.interior}}
+        <h3> Interior:</h3>
+    </section>
+    <table>
+        <tr>
+            <td>
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>Seats:</h4>
+                        </div>
+                        {{#with seats}}
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>material: {{material}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>color: {{color}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if heated includeZero=true }}heated - (yes){{/if}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if ventilated includeZero=true }} ventilated - (yes){{/if}}</h5>
+                            </li>
+                            {{/with}}
+
+                    </div>
+                </section>
+            </td>
+
+            <td>
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>Dashboard:</h4>
+                        </div>
+                        {{#with dashboard}}
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>material: {{material}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>color: {{color}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#with display}}
+                                    {{type}}, size:{{size}}, resolution{{resolution}},
+                                    {{#if touchscreen includeZero=true }} touchscreen-(yes){{/if}}
+                                    {{/with}}</h5>
+                            </li>
+
+                        </ul>
+                        {{/with}}
+
+                    </div>
+                </section>
+            </td>
+
+            <td>
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>Audio:</h4>
+                        </div>
+                        {{#with audio}}
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>system: {{system}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>speakers: {{speakers}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if subwoofer includeZero=true }} subwoofer-(yes){{/if}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if bluetooth includeZero=true }} bluetooth-(yes){{/if}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if USB includeZero=true }} USB-(yes){{/if}}</h5>
+                            </li>
+
+                        </ul>
+                        {{/with}}
+
+                    </div>
+
+                </section>
+            </td>
+        </tr>
+    </table>
+    {{/with}}
+    {{#with features.exterior}}
+    <section>
+        <h3>Exterior:</h3>
+    </section>
+    <table>
+        <tr>
+            <td>
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>Wheels</h4>
+                        </div>
+                        {{#with wheels}}
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>size: {{size}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>type: {{type}} </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>color: {{color}} </h5>
+                            </li>
+                        </ul>
+                        {{/with}}
+                    </div>
+                </section>
+            </td>
+            <td>
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>Headlights</h4>
+                        </div>
+                        {{#with headlights}}
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>type: {{type}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>brightness: {{brightness}} </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if automatic includeZero=true }} automatic-(yes){{/if}}</h5>
+                            </li>
+                        </ul>
+                        {{/with}}
+                    </div>
+                </section>
+            </td>
+            <td>
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>Sunroof</h4>
+                        </div>
+                        {{#with sunroof}}
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>type: {{type}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>size: {{size}} </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if automatic includeZero=true }} automatic-(yes){{/if}}</h5>
+                            </li>
+                        </ul>
+                        {{/with}}
+                    </div>
+                </section>
+            </td>
+        </tr>
+    </table>
+    {{/with}}
+    {{#with features.safety}}
+    <section>
+        <h3>Safety:</h3>
+    </section>
+    <table>
+        <tr>
+            <td>
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>Airbags</h4>
+                        </div>
+                        {{#with airbags}}
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>number: {{front}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>number: {{front}} </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>number: {{front}} </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>number: {{front}} </h5>
+                            </li>
+                        </ul>
+                        {{/with}}
+                    </div>
+                </section>
+            </td>
+            <td>
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>Assistance</h4>
+                        </div>
+                        {{#with assistance}}
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>{{#if blind_spot_monitoring includeZero=true }} blind_spot_monitoring-(yes){{/if}}
+                                </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if rear_cross_traffic_alert includeZero=true }}
+                                    rear_cross_traffic_alert-(yes){{/if}}
+                                </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if lane_departure_warning includeZero=true }} lane_departure_warning-(yes){{/if}}
+                                </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if adaptive_cruise_control includeZero=true }}
+                                    adaptive_cruise_control-(yes){{/if}}
+                                </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#if collision_warning includeZero=true }} collision_warning-(yes){{/if}}</h5>
+                            </li>
+                        </ul>
+                        {{/with}}
+                    </div>
+                </section>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    {{/with}}
+
+    <table>
+        <tr>
+
+            <td>
+                {{#with engine}}
+                <section>
+
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>Engine</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>type: {{type}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>displacement: {{displacement}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>horsepower: {{horsepower}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>torque: {{torque}}</h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>{{#with transmission}}
+                                    {{type}}, gears:{{size}}
+                                    {{/with}}</h5>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                {{/with}}
+            </td>
+
+            <td>
+                {{#with fuel_economy}}
+                <section>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            <h4>fuel_economy<h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h5>city: {{city}} </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>highway: {{highway}} </h5>
+                            </li>
+                            <li class="list-group-item">
+                                <h5>combined: {{combined}} </h5>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                {{/with}}
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <section>
+        <h3>Price:</h3>
+    </section>
+    <section>
+        {{#with price}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                <h5> Base: {{base}} </h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h5> Base: {{base}} </h5>
+                </li>
+                <li class="list-group-item">
+                    <h5> Destination: {{destination}} </h5>
+                </li>
+                <li class="list-group-item">
+                    <h5> Options: {{#with options}}
+                        Navigation: {{navigation}}, moonroof: {{moonroof}},
+                        premium_paint: {{premium_paint}}.
+                        {{/with}}</h5>
+                </li>
+                <li class="list-group-item">
+                    <h4> <b></b>Total: {{total}} </b></h4>
+                </li>
+            </ul>
+        </div>
+        {{/with}}
+    </section>
+</main>
