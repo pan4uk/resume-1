@@ -1,0 +1,64 @@
+<div>
+    {{> title data="WEB (HTML,CSS,JS)" big=true}}
+    {{#with web}}
+    <section>
+        {{#each languages}}
+        <ul>
+            <li>{{name}}/Version:{{version}}</li>
+            <br>
+            <em>{{description}}</em>
+            <br>
+            {{#each elements}}
+            <br>
+            <ul>
+                <li>
+                    <code>{{name}}</code><em>({{description}})</em>
+                </li>
+                {{#each attributes}}
+                <br>
+                <ul>
+                    <li>
+                        <code>{{name}}</code><em>({{description}})</em>
+                    </li>
+                </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+            {{#each properties}}
+            <br>
+            <ul>
+                <li>
+                    <code>{{name}}</code><em>({{description}})</em>
+                </li>
+                {{#each values}}
+                <br>
+                <ul>
+                    <li>
+                        <code>{{value}}</code><em>({{description}})</em>
+                    </li>
+                </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+
+            {{#each functions}}
+            <br>
+            <ul>
+                <li>
+                    <code>{{name}}</code><em>({{description}})</em>
+                </li>
+                {{#each parameters}}
+                <br>
+                <ul>
+                    <li>
+                        <code>{{name}}</code><em>({{description}})</em>
+                    </li>
+                </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+        </ul>
+        {{/each }}
+    </section>
+    {{/with}}
+</div>
