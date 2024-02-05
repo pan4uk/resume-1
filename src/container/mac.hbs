@@ -1,0 +1,88 @@
+<main>
+    {{#with features}}
+    <ul class="list-group">
+        <li class="list-group-item">
+            <em>{{../category}}</em>
+            <h1>{{../name}} <span class="badge bg-success">{{../price}} $</span></h1>
+            <p>({{../description}})</p>
+
+            {{> title data=operating_system big=true}}
+        </li>
+        <li class="list-group-item">
+            {{> title data="Processor:" big=true}}
+            {{#with processor}}
+            <p>({{brand}}, {{model}}, {{speed}}, {{cores}}, {{cache}})</p>
+            {{/with}}
+        </li>
+
+        <li class="list-group-item">
+            {{> title data="Memory:" big=true}}
+            {{#with memory}}
+            <p>({{type}}, {{size}}, {{speed}})</p>
+            {{/with}}
+        </li>
+
+        <li class="list-group-item">
+            {{> title data="Storage:" big=true}}
+            {{#with storage}}
+            <p>({{type}}, {{size}})</p>
+            {{/with}}
+        </li>
+
+        <li class="list-group-item">
+            {{> title data="Display:" big=true}}
+            {{#with display}}
+            <p>({{size}}, {{resolution}}, {{technology}}, {{color_space}}, {{brightness}}, {{refresh_rate}})</p>
+            {{/with}}
+        </li>
+
+        <li class="list-group-item">
+            {{> title data="Graphics:" big=true}}
+            {{#with graphics}}
+            <p>({{brand}}, {{model}}, {{memory}})</p>
+            {{/with}}
+        </li>
+
+        <li class="list-group-item">
+            {{> title data="Ports:" big=true}}
+            {{#each ports}}
+            <p>({{type}}, count - {{count}})
+            <div><em>{{#each features}}
+                    {{this}},
+                    {{/each}}
+                </em>
+            </div>
+            </p>
+            {{/each}}
+        </li>
+
+        <li class="list-group-item">
+            {{> title data="Battery:" big=true}}
+            {{#with battery}}
+            <p>({{type}}, {{capacity}}, {{life}})</p>
+            {{/with}}
+        </li>
+
+        <li class="list-group-item">
+            {{> title data="Weight:" big=true}}
+            <p>{{weight}}</p>
+        </li>
+
+        <li class="list-group-item">
+            {{> title data="Dimensions:" big=true}}
+            {{#with dimensions}}
+            <p>(height:{{height}}, width:{{width}}, depth:{{depth}})</p>
+            {{/with}}
+        </li>
+    </ul>
+    <hr>
+
+    <ul class="list-group">
+        <li class="list-group-item active" aria-current="true">{{> title data="Accessories:" big=true}}</li>
+        {{#each accessories}}
+        <li class="list-group-item">{{name}} - {{price}}$</li>
+        {{/each}}
+
+    </ul>
+    {{/with}}
+</main>
