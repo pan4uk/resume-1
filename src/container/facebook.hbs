@@ -1,0 +1,54 @@
+<main>
+    <ul class="list-group">
+        <li class="list-group-item">
+            {{> title data=name big=true}}
+        </li>
+        {{#each users}}
+        <li class="list-group-item">{{> member}}
+            {{#each friends}}
+            <ul>
+                <li>
+                    <p>{{> member}}
+                        {{#each mutual_friends}}
+                    <ul>
+                        <li>
+                            <p>{{> member}}</p>
+                        </li>
+                    </ul>
+                    {{/each}}
+                    </p>
+                </li>
+            </ul>
+            {{#each groups}}
+            {{> title data=name}}
+            <ul>
+                <b>{{description}}</b>
+                {{#each members}}
+                <p>Members:</p>
+                <ul>
+                    <li>{{> member}}</li>
+                </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+
+            {{/each}}
+
+            {{#each groups}}
+            {{> title data=name}}
+            <ul>
+                <b>{{description}}</b>
+                {{#each members}}
+                <p>Members:</p>
+                <ul>
+                    <li>{{> member}}</li>
+                </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+
+        </li>
+
+        {{/each}}
+    </ul>
+</main>
